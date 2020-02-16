@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/nikstarling/CLionProjects/parser/Operator.h
+
+/home/nikstarling/CLionProjects/parser/Parser.h
+iostream
+-
+map
+-
+vector
+-
+string
+-
+Operator.h
+/home/nikstarling/CLionProjects/parser/Operator.h
+Stack.h
+/home/nikstarling/CLionProjects/parser/Stack.h
+
+/home/nikstarling/CLionProjects/parser/Stack.h
+
+/home/nikstarling/CLionProjects/parser/main.cpp
+iostream
+-
+string
+-
+map
+-
+vector
+-
+Operator.h
+/home/nikstarling/CLionProjects/parser/Operator.h
+Parser.h
+/home/nikstarling/CLionProjects/parser/Parser.h
+Stack.h
+/home/nikstarling/CLionProjects/parser/Stack.h
+
