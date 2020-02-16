@@ -6,21 +6,15 @@
 #include "Parser.h"
 #include "Stack.h"
 
-int main()
+int main(int argc, char *argv[])
 {
-    Parser parser;
+    Parser parser(false);
 
     std::string input;
 
-    while(1)
-    {
+    getline(std::cin, input);
 
-        getline(std::cin, input);
-
-        std::cout << "result: " << parser.parse(input) << std::endl;
-        std::cout << "--------------------" << std::endl;
-
-    }
+    std::cout << "result: " << parser.parse(input) << std::endl;
 
     return 0;
 }

@@ -22,7 +22,6 @@ public:
     T last();
     T pop();
     int get_size();
-    int get_cursor();
 
     T operator[](int i);
 };
@@ -39,11 +38,6 @@ Stack<T>::Stack(const Stack& stack)
 }
 
 
-template <class T>
-int Stack<T>::get_cursor()
-{
-    return this->cursor;
-}
 
 template <class T>
 T Stack<T>::operator[](int i)
@@ -54,7 +48,7 @@ T Stack<T>::operator[](int i)
 template <class T>
 int Stack<T>::get_size()
 {
-    return this->size;
+    return this->cursor;
 }
 
 template <class T>
@@ -103,7 +97,7 @@ T Stack<T>::pop()
 template <class T>
 void print(Stack<T> stack)
 {
-    for(int i = 0; i < stack.get_cursor(); ++i)
+    for(int i = 0; i < stack.get_size(); ++i)
         std::cout << stack[i] << " ";
     std::cout << std::endl;
 }
