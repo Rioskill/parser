@@ -8,6 +8,10 @@
 
 /home/nikstarling/CLionProjects/parser/Operator.h
 
+/home/nikstarling/CLionProjects/parser/Parser.cpp
+Parser.h
+/home/nikstarling/CLionProjects/parser/Parser.h
+
 /home/nikstarling/CLionProjects/parser/Parser.h
 iostream
 -
@@ -16,6 +20,8 @@ map
 vector
 -
 string
+-
+cmath
 -
 Operator.h
 /home/nikstarling/CLionProjects/parser/Operator.h

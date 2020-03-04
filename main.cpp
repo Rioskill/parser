@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     Parser parser(false);
 
     std::string input;
-
+  
     getline(std::cin, input);
 
     std::cout << "result: " << parser.parse(input) << std::endl;

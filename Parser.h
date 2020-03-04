@@ -5,6 +5,7 @@
 #include <map>
 #include <vector>
 #include <string>
+#include <cmath>
 #include "Operator.h"
 #include "Stack.h"
 

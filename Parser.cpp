@@ -45,6 +45,7 @@ Parser::Parser(){
             {"-", Operator([](double a, double b){return a - b;}, 3)},
             {"*", Operator([](double a, double b){return a * b;}, 2)},
             {"/", Operator([](double a, double b){return a / b;}, 2)},
+            {"**", Operator(pow, 1)},
             {"(", Operator(-100)},
             {")", Operator(100)}
     };
