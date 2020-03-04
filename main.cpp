@@ -18,7 +18,9 @@ int main(int argc, char *argv[])
 //
 //    std::cout << "result: " << parser.parse(input) << std::endl;
 
-    Sieve_of_eratosthenes sieveOfEratosthenes(100);
+//    std::cout << "lol1";
+//
+    Sieve_of_eratosthenes a(100);
 
     return 0;
 }

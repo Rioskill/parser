@@ -16,9 +16,15 @@ struct Node
 
     void delete_next()
     {
-        Node *target = this->next;
-        this->next = target->next;
-        delete target;
+        if(this->next != NULL)
+        {
+            if(this->next->next != NULL)
+            {
+                Node *target = this->next;
+                this->next = target->next;
+                delete target;
+            }
+        }
     }
 };
 

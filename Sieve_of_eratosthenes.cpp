@@ -22,5 +22,4 @@ Sieve_of_eratosthenes::Sieve_of_eratosthenes(unsigned int right_border)
             }
         }
     }
-    std::cout << prime_numbers;
 }
