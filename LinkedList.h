@@ -6,12 +6,20 @@
 #define PARSER_LINKEDLIST_H
 
 #include <iostream>
+#include <cmath>
 
 template <class T>
 struct Node
 {
     T data;
     Node *next;
+
+    void delete_next()
+    {
+        Node *target = this->next;
+        this->next = target->next;
+        delete target;
+    }
 };
 
 template <class T>
@@ -26,6 +34,15 @@ public:
     void delete_node(int id);
 
     unsigned int get_size(){return this->size;}
+    Node<T>* get_next(){return this->current->next;}
+    Node<T>* get_current(){return this->current;}
+    void set_next(){this->current = this->current->next;}
+
+    Node<T>* get_head(){return this->head;}
+    void set_head(){this->current = this->head;}
+
+
+
 
     LinkedList();
     ~LinkedList();
@@ -60,6 +77,8 @@ void LinkedList<T>::delete_node(int id)
     }
     delete target;
     this->size--;
+
+    this->current = this->head();
 }
 
 template <class U>
@@ -115,6 +134,7 @@ void LinkedList<T>::create_node(T data)
     }
 
     this->size++;
+    this->current = this->head;
 }
 
 

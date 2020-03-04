@@ -4,10 +4,10 @@
 
 #include "Fraction.h"
 
-void Fraction::reduce()
-{
-
-}
+//void Fraction::reduce()
+//{
+//
+//}
 
 Fraction::operator int() {
     if (numerator * denominator > 0)return numerator / denominator;

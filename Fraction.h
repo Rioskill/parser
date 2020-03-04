@@ -9,11 +9,7 @@
 #include <iostream>
 
 #include "LinkedList.h"
-
-//class Sieve_of_eratosthenes
-//{
-//
-//};
+#include "Sieve_of_eratosthenes.h"
 
 class Fraction {
 private:

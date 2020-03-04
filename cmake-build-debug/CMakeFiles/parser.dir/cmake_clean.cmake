@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/parser.dir/Fraction.cpp.o"
   "CMakeFiles/parser.dir/Operator.cpp.o"
   "CMakeFiles/parser.dir/Parser.cpp.o"
+  "CMakeFiles/parser.dir/Sieve_of_eratosthenes.cpp.o"
   "CMakeFiles/parser.dir/main.cpp.o"
   "parser"
   "parser.pdb"

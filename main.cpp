@@ -5,6 +5,8 @@
 #include "Operator.h"
 #include "Parser.h"
 #include "Stack.h"
+#include "Fraction.h"
+#include "Sieve_of_eratosthenes.h"
 
 int main(int argc, char *argv[])
 {
@@ -16,6 +18,7 @@ int main(int argc, char *argv[])
 //
 //    std::cout << "result: " << parser.parse(input) << std::endl;
 
+    Sieve_of_eratosthenes sieveOfEratosthenes(100);
 
     return 0;
 }

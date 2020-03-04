@@ -204,6 +204,33 @@ Parser.cpp.s:
 	$(MAKE) -f CMakeFiles/parser.dir/build.make CMakeFiles/parser.dir/Parser.cpp.s
 .PHONY : Parser.cpp.s
 
+Sieve_of_eratosthenes.o: Sieve_of_eratosthenes.cpp.o
+
+.PHONY : Sieve_of_eratosthenes.o
+
+# target to build an object file
+Sieve_of_eratosthenes.cpp.o:
+	$(MAKE) -f CMakeFiles/parser.dir/build.make CMakeFiles/parser.dir/Sieve_of_eratosthenes.cpp.o
+.PHONY : Sieve_of_eratosthenes.cpp.o
+
+Sieve_of_eratosthenes.i: Sieve_of_eratosthenes.cpp.i
+
+.PHONY : Sieve_of_eratosthenes.i
+
+# target to preprocess a source file
+Sieve_of_eratosthenes.cpp.i:
+	$(MAKE) -f CMakeFiles/parser.dir/build.make CMakeFiles/parser.dir/Sieve_of_eratosthenes.cpp.i
+.PHONY : Sieve_of_eratosthenes.cpp.i
+
+Sieve_of_eratosthenes.s: Sieve_of_eratosthenes.cpp.s
+
+.PHONY : Sieve_of_eratosthenes.s
+
+# target to generate assembly for a file
+Sieve_of_eratosthenes.cpp.s:
+	$(MAKE) -f CMakeFiles/parser.dir/build.make CMakeFiles/parser.dir/Sieve_of_eratosthenes.cpp.s
+.PHONY : Sieve_of_eratosthenes.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -249,6 +276,9 @@ help:
 	@echo "... Parser.o"
 	@echo "... Parser.i"
 	@echo "... Parser.s"
+	@echo "... Sieve_of_eratosthenes.o"
+	@echo "... Sieve_of_eratosthenes.i"
+	@echo "... Sieve_of_eratosthenes.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

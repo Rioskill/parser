@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/nikstarling/CLionProjects/parser/Fraction.cpp" "/home/nikstarling/CLionProjects/parser/cmake-build-debug/CMakeFiles/parser.dir/Fraction.cpp.o"
   "/home/nikstarling/CLionProjects/parser/Operator.cpp" "/home/nikstarling/CLionProjects/parser/cmake-build-debug/CMakeFiles/parser.dir/Operator.cpp.o"
   "/home/nikstarling/CLionProjects/parser/Parser.cpp" "/home/nikstarling/CLionProjects/parser/cmake-build-debug/CMakeFiles/parser.dir/Parser.cpp.o"
+  "/home/nikstarling/CLionProjects/parser/Sieve_of_eratosthenes.cpp" "/home/nikstarling/CLionProjects/parser/cmake-build-debug/CMakeFiles/parser.dir/Sieve_of_eratosthenes.cpp.o"
   "/home/nikstarling/CLionProjects/parser/main.cpp" "/home/nikstarling/CLionProjects/parser/cmake-build-debug/CMakeFiles/parser.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

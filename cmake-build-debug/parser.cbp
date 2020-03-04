@@ -103,6 +103,12 @@
 		<Unit filename="/home/nikstarling/CLionProjects/parser/Parser.h">
 			<Option target="parser"/>
 		</Unit>
+		<Unit filename="/home/nikstarling/CLionProjects/parser/Sieve_of_eratosthenes.cpp">
+			<Option target="parser"/>
+		</Unit>
+		<Unit filename="/home/nikstarling/CLionProjects/parser/Sieve_of_eratosthenes.h">
+			<Option target="parser"/>
+		</Unit>
 		<Unit filename="/home/nikstarling/CLionProjects/parser/Stack.h">
 			<Option target="parser"/>
 		</Unit>
