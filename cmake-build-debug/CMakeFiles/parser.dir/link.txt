@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/parser.dir/main.cpp.o CMakeFiles/parser.dir/Operator.cpp.o CMakeFiles/parser.dir/Parser.cpp.o  -o parser 
+/usr/bin/c++  -g   CMakeFiles/parser.dir/main.cpp.o CMakeFiles/parser.dir/Operator.cpp.o CMakeFiles/parser.dir/Parser.cpp.o CMakeFiles/parser.dir/Fraction.cpp.o  -o parser 

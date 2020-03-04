@@ -82,6 +82,15 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/nikstarling/CLionProjects/parser/Fraction.cpp">
+			<Option target="parser"/>
+		</Unit>
+		<Unit filename="/home/nikstarling/CLionProjects/parser/Fraction.h">
+			<Option target="parser"/>
+		</Unit>
+		<Unit filename="/home/nikstarling/CLionProjects/parser/LinkedList.h">
+			<Option target="parser"/>
+		</Unit>
 		<Unit filename="/home/nikstarling/CLionProjects/parser/Operator.cpp">
 			<Option target="parser"/>
 		</Unit>

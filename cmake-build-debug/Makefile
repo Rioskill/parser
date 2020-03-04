@@ -123,6 +123,33 @@ parser/fast:
 	$(MAKE) -f CMakeFiles/parser.dir/build.make CMakeFiles/parser.dir/build
 .PHONY : parser/fast
 
+Fraction.o: Fraction.cpp.o
+
+.PHONY : Fraction.o
+
+# target to build an object file
+Fraction.cpp.o:
+	$(MAKE) -f CMakeFiles/parser.dir/build.make CMakeFiles/parser.dir/Fraction.cpp.o
+.PHONY : Fraction.cpp.o
+
+Fraction.i: Fraction.cpp.i
+
+.PHONY : Fraction.i
+
+# target to preprocess a source file
+Fraction.cpp.i:
+	$(MAKE) -f CMakeFiles/parser.dir/build.make CMakeFiles/parser.dir/Fraction.cpp.i
+.PHONY : Fraction.cpp.i
+
+Fraction.s: Fraction.cpp.s
+
+.PHONY : Fraction.s
+
+# target to generate assembly for a file
+Fraction.cpp.s:
+	$(MAKE) -f CMakeFiles/parser.dir/build.make CMakeFiles/parser.dir/Fraction.cpp.s
+.PHONY : Fraction.cpp.s
+
 Operator.o: Operator.cpp.o
 
 .PHONY : Operator.o
@@ -213,6 +240,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... parser"
 	@echo "... edit_cache"
+	@echo "... Fraction.o"
+	@echo "... Fraction.i"
+	@echo "... Fraction.s"
 	@echo "... Operator.o"
 	@echo "... Operator.i"
 	@echo "... Operator.s"

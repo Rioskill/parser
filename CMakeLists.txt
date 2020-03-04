@@ -3,4 +3,4 @@ project(parser)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(parser main.cpp Operator.cpp Operator.h Parser.cpp Parser.h Stack.h)
+add_executable(parser main.cpp Operator.cpp Operator.h Parser.cpp Parser.h Stack.h Fraction.cpp Fraction.h LinkedList.h)
