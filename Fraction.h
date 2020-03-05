@@ -35,7 +35,7 @@ public:
     bool operator>(Fraction b);
     bool operator==(Fraction b);
 
-    friend std::ostream& operator<<(std::ostream &out, Fraction &a);
+    friend std::ostream& operator<<(std::ostream &out, const Fraction &a);
     friend std::istream& operator>>(std::istream &in, Fraction &a);
 
     friend Fraction operator*(int a, Fraction b);

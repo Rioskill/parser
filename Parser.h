@@ -8,6 +8,7 @@
 #include <cmath>
 #include "Operator.h"
 #include "Stack.h"
+#include "Fraction.h"
 
 class Parser {
 private:
@@ -17,10 +18,10 @@ public:
     Parser();
     Parser(bool show_debug_information);
 
-    void print_debug_information(Stack<double> numbers, Stack<std::string> operators);
+    void print_debug_information(Stack<Fraction> numbers, Stack<std::string> operators);
 
-    void count(Stack<double>&, Stack<std::string>&);
-    double parse(std::string);
+    void count(Stack<Fraction>&, Stack<std::string>&);
+    Fraction parse(std::string);
 };
 
 

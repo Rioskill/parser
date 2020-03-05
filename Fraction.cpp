@@ -20,11 +20,6 @@ void Fraction::reduce()
     }
 }
 
-//void Fraction::generate_prime_numbers(unsigned int right_border)
-//{
-//    prime_numbers.generate(right_border);
-//}
-
 Fraction::operator int() {
     if (numerator * denominator > 0)return numerator / denominator;
     else return numerator / denominator - 1;
@@ -42,6 +37,9 @@ Fraction operator*(int a, Fraction b) {
     Fraction res;
     res.numerator = b.numerator * a;
     res.denominator = b.denominator;
+
+    res.reduce();
+
     return res;
 }
 
@@ -51,7 +49,7 @@ std::istream& operator>>(std::istream &in, Fraction &a) {
     return in;
 }
 
-std::ostream& operator<<(std::ostream &out, Fraction &a) {
+std::ostream& operator<<(std::ostream &out, const Fraction &a) {
     if(a.denominator == 1)
         out << a.numerator;
     else
@@ -133,6 +131,8 @@ Fraction Fraction::operator+(Fraction b) {
     c.denominator = denominator * b.denominator;
     c.numerator = numerator + b.numerator;
 
+    c.reduce();
+
     return c;
 }
 
@@ -144,6 +144,8 @@ Fraction Fraction::operator-(Fraction b) {
     c.denominator = denominator * b.denominator;
     c.numerator = numerator - b.numerator;
 
+    c.reduce();
+
     return c;
 }
 
@@ -152,6 +154,8 @@ Fraction Fraction::operator*(Fraction b) {
 
     c.numerator = numerator * b.numerator;
     c.denominator = denominator * b.denominator;
+
+    c.reduce();
 
     return c;
 }
@@ -162,6 +166,8 @@ Fraction Fraction::operator/(Fraction b) {
     c.numerator = numerator * b.denominator;
     c.denominator = denominator * b.numerator;
 
+    c.reduce();
+
     return c;
 }
 
@@ -170,6 +176,8 @@ Fraction Fraction::operator%(Fraction b) {
 
     c.numerator = (numerator * b.denominator) % (b.numerator * denominator);
     c.denominator = denominator * b.denominator;
+
+    c.reduce();
 
     return c;
 }

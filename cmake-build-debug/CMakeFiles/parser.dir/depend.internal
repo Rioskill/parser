@@ -7,12 +7,18 @@ CMakeFiles/parser.dir/Fraction.cpp.o
  /home/nikstarling/CLionProjects/parser/LinkedList.h
  /home/nikstarling/CLionProjects/parser/Sieve_of_eratosthenes.h
 CMakeFiles/parser.dir/Operator.cpp.o
+ /home/nikstarling/CLionProjects/parser/Fraction.h
+ /home/nikstarling/CLionProjects/parser/LinkedList.h
  /home/nikstarling/CLionProjects/parser/Operator.cpp
  /home/nikstarling/CLionProjects/parser/Operator.h
+ /home/nikstarling/CLionProjects/parser/Sieve_of_eratosthenes.h
 CMakeFiles/parser.dir/Parser.cpp.o
+ /home/nikstarling/CLionProjects/parser/Fraction.h
+ /home/nikstarling/CLionProjects/parser/LinkedList.h
  /home/nikstarling/CLionProjects/parser/Operator.h
  /home/nikstarling/CLionProjects/parser/Parser.cpp
  /home/nikstarling/CLionProjects/parser/Parser.h
+ /home/nikstarling/CLionProjects/parser/Sieve_of_eratosthenes.h
  /home/nikstarling/CLionProjects/parser/Stack.h
 CMakeFiles/parser.dir/Sieve_of_eratosthenes.cpp.o
  /home/nikstarling/CLionProjects/parser/LinkedList.h

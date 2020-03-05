@@ -6,12 +6,18 @@ CMakeFiles/parser.dir/Fraction.cpp.o: ../Fraction.h
 CMakeFiles/parser.dir/Fraction.cpp.o: ../LinkedList.h
 CMakeFiles/parser.dir/Fraction.cpp.o: ../Sieve_of_eratosthenes.h
 
+CMakeFiles/parser.dir/Operator.cpp.o: ../Fraction.h
+CMakeFiles/parser.dir/Operator.cpp.o: ../LinkedList.h
 CMakeFiles/parser.dir/Operator.cpp.o: ../Operator.cpp
 CMakeFiles/parser.dir/Operator.cpp.o: ../Operator.h
+CMakeFiles/parser.dir/Operator.cpp.o: ../Sieve_of_eratosthenes.h
 
+CMakeFiles/parser.dir/Parser.cpp.o: ../Fraction.h
+CMakeFiles/parser.dir/Parser.cpp.o: ../LinkedList.h
 CMakeFiles/parser.dir/Parser.cpp.o: ../Operator.h
 CMakeFiles/parser.dir/Parser.cpp.o: ../Parser.cpp
 CMakeFiles/parser.dir/Parser.cpp.o: ../Parser.h
+CMakeFiles/parser.dir/Parser.cpp.o: ../Sieve_of_eratosthenes.h
 CMakeFiles/parser.dir/Parser.cpp.o: ../Stack.h
 
 CMakeFiles/parser.dir/Sieve_of_eratosthenes.cpp.o: ../LinkedList.h

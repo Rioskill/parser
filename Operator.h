@@ -1,22 +1,23 @@
 #ifndef PARSER_OPERATOR_H
 #define PARSER_OPERATOR_H
 
+#include "Fraction.h"
 
 class Operator
 {
 private:
-    double (*func)(double a, double b);
+    Fraction (*func)(Fraction a, Fraction b);
     int priority;
 public:
-    Operator(double (*func)(double, double), int priority);
+    Operator(Fraction (*func)(Fraction, Fraction), int priority);
     Operator();
     Operator(int priority);
 
-    double execute(double a, double b);
+    Fraction execute(Fraction a, Fraction b);
 
     int get_priority();
 
-    double operator() (double a, double b);
+    Fraction operator() (Fraction a, Fraction b);
 };
 
 #endif //PARSER_OPERATOR_H

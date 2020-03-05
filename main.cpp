@@ -10,11 +10,8 @@
 
 int main(int argc, char *argv[])
 {
-    Fraction a;
+    Parser parser;
 
-    std::cin >> a;
-    a.reduce();
-    std::cout << a;
-
+    std::cout << "result: " << parser.parse("17 / 8 * 2");
     return 0;
 }

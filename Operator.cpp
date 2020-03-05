@@ -14,18 +14,18 @@ Operator::Operator()
     this->priority = 0;
 }
 
-Operator::Operator(double (*func)(double, double), int priority)
+Operator::Operator(Fraction (*func)(Fraction, Fraction), int priority)
 {
     this->func = func;
     this->priority = priority;
 }
 
-double Operator::execute(double a, double b)
+Fraction Operator::execute(Fraction a, Fraction b)
 {
     return this->func(a, b);
 }
 
-double Operator::operator()(double a, double b)
+Fraction Operator::operator()(Fraction a, Fraction b)
 {
     return this->func(a, b);
 }

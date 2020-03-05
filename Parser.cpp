@@ -41,14 +41,14 @@ std::vector<std::string> split(std::string S, char splitter = ' ')
 
 Parser::Parser(){
     this->operators = {
-            {"+", Operator([](double a, double b){return a + b;}, 3)},
-            {"-", Operator([](double a, double b){return a - b;}, 3)},
-            {"*", Operator([](double a, double b){return a * b;}, 2)},
-            {"/", Operator([](double a, double b){return a / b;}, 2)},
-            {"**", Operator(pow, 1)},
+            {"+", Operator([](Fraction a, Fraction b){return a + b;}, 3)},
+            {"-", Operator([](Fraction a, Fraction b){return a - b;}, 3)},
+            {"*", Operator([](Fraction a, Fraction b){return a * b;}, 2)},
+            {"/", Operator([](Fraction a, Fraction b){return a / b;}, 2)},
             {"(", Operator(-100)},
             {")", Operator(100)}
     };
+    this->show_debug_information = false;
 }
 
 Parser::Parser(bool show_debug_information) : Parser()
@@ -56,7 +56,7 @@ Parser::Parser(bool show_debug_information) : Parser()
     this->show_debug_information = show_debug_information;
 }
 
-void Parser::print_debug_information(Stack<double> numbers, Stack<std::string> operators)
+void Parser::print_debug_information(Stack<Fraction> numbers, Stack<std::string> operators)
 {
     std::cout << "numbers: ";
     print(numbers);
@@ -64,9 +64,9 @@ void Parser::print_debug_information(Stack<double> numbers, Stack<std::string> o
     print(operators);
 }
 
-void Parser::count(Stack<double> &numbers, Stack<std::string> &ops)
+void Parser::count(Stack<Fraction> &numbers, Stack<std::string> &ops)
 {
-    Stack<double> extra_numbers(50);
+    Stack<Fraction> extra_numbers(50);
     Stack<std::string> extra_ops(50);
     int current_priority;
 
@@ -84,8 +84,8 @@ void Parser::count(Stack<double> &numbers, Stack<std::string> &ops)
 
         if(ops.last() == "(")
         {
-            double first = extra_numbers.pop();
-            double second = extra_numbers.pop();
+            Fraction first = extra_numbers.pop();
+            Fraction second = extra_numbers.pop();
             extra_numbers.push(this->operators[extra_ops.pop()].execute(first, second));
             break;
         }
@@ -106,8 +106,8 @@ void Parser::count(Stack<double> &numbers, Stack<std::string> &ops)
         else {
             //print_debug_information(extra_numbers, extra_ops);
 
-            double first = extra_numbers.pop();
-            double second = extra_numbers.pop();
+            Fraction first = extra_numbers.pop();
+            Fraction second = extra_numbers.pop();
             extra_numbers.push(this->operators[extra_ops.pop()].execute(first, second));
         }
     }
@@ -132,9 +132,9 @@ void Parser::count(Stack<double> &numbers, Stack<std::string> &ops)
     }
 }
 
-double Parser::parse(std::string input)
+Fraction Parser::parse(std::string input)
 {
-    Stack<double> numbers(100);
+    Stack<Fraction> numbers(100);
     Stack<std::string> ops(100);
 
     std::vector<std::string> splitted = split(add_extra_spaces(input));
@@ -154,14 +154,14 @@ double Parser::parse(std::string input)
                 count(numbers, ops);
             ops.push(word);
         } else{
-            numbers.push(std::stod(word));
+            numbers.push(std::stoi(word));
         }
 
     }
 
     count(numbers, ops);
 
-    double res = numbers.pop();
+    Fraction res = numbers.pop();
 
     return res;
 
