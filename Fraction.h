@@ -15,8 +15,7 @@ class Fraction {
 private:
     long long numerator;
     long long denominator;
-
-    void reduce();
+    static Sieve_of_eratosthenes prime_numbers;
 
 public:
     Fraction();
@@ -28,6 +27,9 @@ public:
     Fraction operator/(Fraction b);
     Fraction operator%(Fraction b);
     Fraction operator-();
+
+    //void generate_prime_numbers(unsigned int right_border);
+    void reduce();
 
     bool operator<(Fraction b);
     bool operator>(Fraction b);
@@ -43,6 +45,5 @@ public:
     operator double();
     operator int();
 };
-
 
 #endif //PARSER_FRACTION_H

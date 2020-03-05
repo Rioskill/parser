@@ -10,17 +10,11 @@
 
 int main(int argc, char *argv[])
 {
-//    Parser parser(false);
-//
-//    std::string input;
-//
-//    getline(std::cin, input);
-//
-//    std::cout << "result: " << parser.parse(input) << std::endl;
+    Fraction a;
 
-//    std::cout << "lol1";
-//
-    Sieve_of_eratosthenes a(100);
+    std::cin >> a;
+    a.reduce();
+    std::cout << a;
 
     return 0;
 }

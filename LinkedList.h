@@ -18,6 +18,12 @@ struct Node
     {
         if(this->next != NULL)
         {
+//            if (this->next->next == NULL)
+//            {
+//                Node *target = this->next;
+//                this->next = NULL;
+//                delete target;
+//            }
             if(this->next->next != NULL)
             {
                 Node *target = this->next;
@@ -42,12 +48,12 @@ public:
     unsigned int get_size(){return this->size;}
     Node<T>* get_next(){return this->current->next;}
     Node<T>* get_current(){return this->current;}
-    void set_next(){this->current = this->current->next;}
+    void set_next();
 
     Node<T>* get_head(){return this->head;}
     void set_head(){this->current = this->head;}
 
-
+    void shrink(){this->size -= 1;}
 
 
     LinkedList();
@@ -56,6 +62,13 @@ public:
     template <class U>
     friend std::ostream& operator<<(std::ostream &out, LinkedList<U> &a);
 };
+
+template<class T>
+void LinkedList<T>::set_next()
+{
+    if(this->current->next != NULL)
+        this->current = this->current->next;
+}
 
 template <class T>
 void LinkedList<T>::delete_node(int id)

@@ -9,10 +9,19 @@
 #include "LinkedList.h"
 
 class Sieve_of_eratosthenes {
+private:
+    int *data;
+    unsigned int size;
 
-    LinkedList<int> prime_numbers;
 public:
-    Sieve_of_eratosthenes(unsigned int right_border);
+    Sieve_of_eratosthenes(unsigned int right_border = 100);
+
+    ~Sieve_of_eratosthenes();
+
+    //void generate(unsigned int right_border);
+    unsigned int get_size(){return this->size;}
+
+    int operator[](int x);
 };
 
 

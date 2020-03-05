@@ -4,9 +4,25 @@
 
 #include "Fraction.h"
 
-//void Fraction::reduce()
+Sieve_of_eratosthenes Fraction::prime_numbers(100);
+
+void Fraction::reduce()
+{
+
+    for(int i = 0; i < prime_numbers.get_size(); ++i)
+    {
+        int num = prime_numbers[i];
+        if((this->numerator % num == 0) && (this->denominator % num == 0))
+        {
+            this->numerator /= num;
+            this->denominator /= num;
+        }
+    }
+}
+
+//void Fraction::generate_prime_numbers(unsigned int right_border)
 //{
-//
+//    prime_numbers.generate(right_border);
 //}
 
 Fraction::operator int() {
