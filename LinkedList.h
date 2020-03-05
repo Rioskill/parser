@@ -18,12 +18,6 @@ struct Node
     {
         if(this->next != NULL)
         {
-//            if (this->next->next == NULL)
-//            {
-//                Node *target = this->next;
-//                this->next = NULL;
-//                delete target;
-//            }
             if(this->next->next != NULL)
             {
                 Node *target = this->next;

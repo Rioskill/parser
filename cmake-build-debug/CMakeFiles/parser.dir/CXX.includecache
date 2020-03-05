@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/nikstarling/CLionProjects/parser/Fraction.cpp
-Fraction.h
-/home/nikstarling/CLionProjects/parser/Fraction.h
-
 /home/nikstarling/CLionProjects/parser/Fraction.h
 cmath
 -
@@ -26,7 +22,51 @@ iostream
 cmath
 -
 
+/home/nikstarling/CLionProjects/parser/Operator.h
+Fraction.h
+/home/nikstarling/CLionProjects/parser/Fraction.h
+
+/home/nikstarling/CLionProjects/parser/Parser.h
+iostream
+-
+map
+-
+vector
+-
+string
+-
+cmath
+-
+Operator.h
+/home/nikstarling/CLionProjects/parser/Operator.h
+Stack.h
+/home/nikstarling/CLionProjects/parser/Stack.h
+Fraction.h
+/home/nikstarling/CLionProjects/parser/Fraction.h
+
 /home/nikstarling/CLionProjects/parser/Sieve_of_eratosthenes.h
 LinkedList.h
 /home/nikstarling/CLionProjects/parser/LinkedList.h
+
+/home/nikstarling/CLionProjects/parser/Stack.h
+
+/home/nikstarling/CLionProjects/parser/main.cpp
+iostream
+-
+string
+-
+map
+-
+vector
+-
+Operator.h
+/home/nikstarling/CLionProjects/parser/Operator.h
+Parser.h
+/home/nikstarling/CLionProjects/parser/Parser.h
+Stack.h
+/home/nikstarling/CLionProjects/parser/Stack.h
+Fraction.h
+/home/nikstarling/CLionProjects/parser/Fraction.h
+Sieve_of_eratosthenes.h
+/home/nikstarling/CLionProjects/parser/Sieve_of_eratosthenes.h
 
