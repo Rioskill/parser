@@ -6,6 +6,7 @@ int main(int argc, char *argv[])
 {
     Parser parser;
 
-    std::cout << "result: " << parser.parse("(2 / 3 + 4 / 5) * 5 / 2");
+    std::cout << "result: " << parser.parse("3/2 + 7/9 + (8 + 6*7/2)");
+
     return 0;
 }

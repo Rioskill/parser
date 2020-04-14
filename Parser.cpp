@@ -1,16 +1,23 @@
 #include "Parser.h"
 
-std::string add_extra_spaces(std::string input)
+std::string add_extra_spaces(std::string input, std::vector<std::string> stop_symbols)
 {
     std::string res;
-    for(auto symbol: input)
+    for(int i = 0; i < input.length(); ++i)
     {
-        if(symbol == '(' || symbol == ')')
+        std::string symbol = input.substr(i, 1);
+        bool found = false;
+        for(auto stop_symbol: stop_symbols)
         {
-            res = res + ' ' + symbol + ' ';
-        } else{
-            res += symbol;
+            if(symbol == stop_symbol)
+            {
+                auto str = ' ' + symbol + ' ';
+                res += str;
+                found = true;
+            }
         }
+        if(!found)
+            res += symbol;
     }
     return res;
 }
@@ -49,6 +56,16 @@ Parser::Parser(){
             {")", Operator(100)}
     };
     this->show_debug_information = false;
+}
+
+std::vector<std::string> Parser::get_all_operator_keys()
+{
+    std::vector<std::string> res;
+    for(auto it = this->operators.begin(); it != this->operators.end(); ++it)
+    {
+        res.push_back(it->first);
+    }
+    return res;
 }
 
 Parser::Parser(bool show_debug_information) : Parser()
@@ -137,7 +154,8 @@ Fraction Parser::parse(std::string input)
     Stack<Fraction> numbers(100);
     Stack<std::string> ops(100);
 
-    std::vector<std::string> splitted = split(add_extra_spaces(input));
+    std::vector<std::string> splitted = split(add_extra_spaces(input, this->get_all_operator_keys()));
+
 
     for(auto word: splitted)
     {

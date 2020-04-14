@@ -14,6 +14,7 @@ class Parser {
 private:
     std::map<std::string, Operator> operators;
     bool show_debug_information;
+    std::vector<std::string> get_all_operator_keys();
 public:
     Parser();
     Parser(bool show_debug_information);

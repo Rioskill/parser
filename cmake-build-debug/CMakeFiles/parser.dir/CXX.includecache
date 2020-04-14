@@ -53,20 +53,8 @@ LinkedList.h
 /home/nikstarling/CLionProjects/parser/main.cpp
 iostream
 -
-string
--
-map
--
-vector
--
-Operator.h
-/home/nikstarling/CLionProjects/parser/Operator.h
 Parser.h
 /home/nikstarling/CLionProjects/parser/Parser.h
-Stack.h
-/home/nikstarling/CLionProjects/parser/Stack.h
 Fraction.h
 /home/nikstarling/CLionProjects/parser/Fraction.h
-Sieve_of_eratosthenes.h
-/home/nikstarling/CLionProjects/parser/Sieve_of_eratosthenes.h
 
