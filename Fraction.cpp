@@ -16,8 +16,10 @@ void Fraction::reduce()
         {
             this->numerator /= num;
             this->denominator /= num;
+            i = -1;
         }
     }
+    std::cout << std::endl;
 }
 
 Fraction::operator int() {
