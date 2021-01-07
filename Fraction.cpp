@@ -19,7 +19,6 @@ void Fraction::reduce()
             i = -1;
         }
     }
-    std::cout << std::endl;
 }
 
 Fraction::operator int() {
