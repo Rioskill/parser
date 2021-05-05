@@ -7,7 +7,6 @@
 #include <string>
 #include <cmath>
 #include "Operator.h"
-#include "Stack.h"
 #include "Fraction.h"
 
 class Parser {
@@ -19,9 +18,9 @@ public:
     Parser();
     Parser(bool show_debug_information);
 
-    void print_debug_information(Stack<Fraction> numbers, Stack<std::string> operators);
+    void print_debug_information(std::vector<Fraction> numbers, std::vector<std::string> operators);
 
-    void count(Stack<Fraction>&, Stack<std::string>&);
+    void count(std::vector<Fraction>&, std::vector<std::string>&, int min_priority = 10);
     Fraction parse(std::string);
 };
 

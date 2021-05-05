@@ -73,115 +73,88 @@ Parser::Parser(bool show_debug_information) : Parser()
     this->show_debug_information = show_debug_information;
 }
 
-void Parser::print_debug_information(Stack<Fraction> numbers, Stack<std::string> operators)
+template <typename T>
+void print(std::vector<T> vector)
 {
+    for(auto &i : vector)
+        std::cout << i << ' ';
+    std::cout << std::endl;
+}
+
+void Parser::print_debug_information(std::vector<Fraction> numbers, std::vector<std::string> operators)
+{
+    if(!this->show_debug_information)
+        return;
     std::cout << "numbers: ";
     print(numbers);
     std::cout << "operators: ";
     print(operators);
 }
 
-void Parser::count(Stack<Fraction> &numbers, Stack<std::string> &ops)
+// TODO: rewrite this to use Stack instead of std::vector
+void Parser::count(std::vector<Fraction> &numbers, std::vector<std::string> &ops, int max_priority)
 {
-    Stack<Fraction> extra_numbers(50);
-    Stack<std::string> extra_ops(50);
-    int current_priority;
-
-    while(( ops.get_size() > 0 || extra_ops.get_size() > 0 ))
+    std::cout << std::endl << "start of count with priority: " << max_priority << std::endl << std::endl;
+    while(!ops.empty() && ops.back() != "(")
     {
-        if(this->show_debug_information)
-        {
-            std::cout << "normal:" << std::endl;
-            print_debug_information(numbers, ops);
-            std::cout << "-------" << std::endl;
-            std::cout << "extra:" << std::endl;
-            print_debug_information(extra_numbers, extra_ops);
-            std::cout << "-----------------------------------" << std::endl;
-        }
-
-        if(ops.last() == "(")
-        {
-            Fraction first = extra_numbers.pop();
-            Fraction second = extra_numbers.pop();
-            extra_numbers.push(this->operators[extra_ops.pop()].execute(first, second));
+        print_debug_information(numbers, ops);
+        std::cout << "----------------" << std::endl;
+        if(this->operators[ops.back()].get_priority() > max_priority)
             break;
-        }
 
-        if(extra_ops.get_size() == 0){
-            if(extra_numbers.get_size() == 1)
-                numbers.push(extra_numbers.pop());
-            extra_ops.push(ops.pop());
-            extra_numbers.push(numbers.pop());
-            extra_numbers.push(numbers.pop());
-            current_priority = this->operators[extra_ops.last()].get_priority();
-        }
-        else if(ops.get_size() > 0 && this->operators[ops.last()].get_priority() == current_priority)
-        {
-            extra_ops.push(ops.pop());
-            extra_numbers.push(numbers.pop());
-        }
-        else {
-            //print_debug_information(extra_numbers, extra_ops);
 
-            Fraction first = extra_numbers.pop();
-            Fraction second = extra_numbers.pop();
-            extra_numbers.push(this->operators[extra_ops.pop()].execute(first, second));
-        }
+        Fraction a = numbers.back();
+        numbers.pop_back();
+        Fraction b = numbers.back();
+        numbers.pop_back();
+
+        Operator op = this->operators[ops.back()];
+        ops.pop_back();
+        numbers.push_back(op.execute(b, a));
     }
-
-    if(this->show_debug_information)
-    {
-        std::cout << "normal:" << std::endl;
-        print_debug_information(numbers, ops);
-        std::cout << "extra:" << std::endl;
-        print_debug_information(extra_numbers, extra_ops);
-        std::cout << "///////////////////////////////" << std::endl;
-    }
-
-    numbers.push(extra_numbers.pop());
-
-    if(this->show_debug_information) {
-        std::cout << "normal:" << std::endl;
-        print_debug_information(numbers, ops);
-        std::cout << "extra:" << std::endl;
-        print_debug_information(extra_numbers, extra_ops);
-        std::cout << "===============================" << std::endl;
-    }
+    print_debug_information(numbers, ops);
+    std::cout << "----------------" << std::endl;
+    std::cout << "end of count" << std::endl;
 }
 
 Fraction Parser::parse(std::string input)
 {
-    Stack<Fraction> numbers(100);
-    Stack<std::string> ops(100);
+    std::vector<Fraction> numbers;
+    std::vector<std::string> ops;
 
     std::vector<std::string> splitted = split(add_extra_spaces(input, this->get_all_operator_keys()));
+    bool is_operator = true;
 
-
-    for(auto word: splitted)
+    for(auto &word: splitted)
     {
         if(word == ")")
         {
             count(numbers, ops);
-            ops.pop();
+            ops.pop_back();
         }
-        else if(this->operators.find(word) != this->operators.end())
+        else if (word == "-" && is_operator)
+        {
+            ops.push_back("unar-");
+            numbers.push_back(-1);
+        }
+        else if (this->operators.find(word) != this->operators.end())  // if operator exists
         {
             auto op = this->operators[word];
-            auto last = this->operators[ops.last()];
-            if(ops.get_size() > 0 && op.get_priority() > last.get_priority() && ops.last() != "(")
-                count(numbers, ops);
-            ops.push(word);
-        } else{
-            numbers.push(std::stoi(word));
+            while(!ops.empty() && op.get_priority() >= this->operators[ops.back()].get_priority() && ops.back() != "(")
+                count(numbers, ops, this->operators[ops.back()].get_priority());
+            ops.push_back(word);
+            is_operator = true;
+        } else {
+            numbers.push_back(std::stod(word));
+            is_operator = false;
         }
 
     }
 
     count(numbers, ops);
 
-    Fraction res = numbers.pop();
+    Fraction res = numbers.back();
 
     return res;
 
 }
-
