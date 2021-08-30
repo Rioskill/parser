@@ -94,11 +94,15 @@ void Parser::print_debug_information(std::vector<Fraction> numbers, std::vector<
 // TODO: rewrite this to use Stack instead of std::vector
 void Parser::count(std::vector<Fraction> &numbers, std::vector<std::string> &ops, int max_priority)
 {
-    std::cout << std::endl << "start of count with priority: " << max_priority << std::endl << std::endl;
+    if(this->show_debug_information)
+        std::cout << std::endl << "start of count with priority: " << max_priority << std::endl << std::endl;
     while(!ops.empty() && ops.back() != "(")
     {
-        print_debug_information(numbers, ops);
-        std::cout << "----------------" << std::endl;
+        if(this->show_debug_information)
+        {
+            print_debug_information(numbers, ops);
+            std::cout << "----------------" << std::endl;
+        }
         if(this->operators[ops.back()].get_priority() > max_priority)
             break;
 
@@ -112,9 +116,12 @@ void Parser::count(std::vector<Fraction> &numbers, std::vector<std::string> &ops
         ops.pop_back();
         numbers.push_back(op.execute(b, a));
     }
-    print_debug_information(numbers, ops);
-    std::cout << "----------------" << std::endl;
-    std::cout << "end of count" << std::endl;
+    if(this->show_debug_information)
+    {
+        print_debug_information(numbers, ops);
+        std::cout << "----------------" << std::endl;
+        std::cout << "end of count" << std::endl;
+    }
 }
 
 Fraction Parser::parse(std::string input)
