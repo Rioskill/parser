@@ -5,9 +5,17 @@
 int main(int argc, char *argv[])
 {
     Parser parser(false);
-    std::string in;
-    std::getline(std::cin, in);
-    std::cout << "result: " << parser.parse(in) << std::endl;
+    bool running = true;
+
+    while(running)
+    {
+        std::string in;
+        std::getline(std::cin, in);
+        if(in == "exit" || in == "quit")
+            running = false;
+        else
+            std::cout << "result: " << parser.parse(in) << std::endl;
+    }
 
     return 0;
 }
